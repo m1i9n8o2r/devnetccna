@@ -20,3 +20,14 @@ with open("csv_file.csv") as data:
         location = row[2]
         ip = row[1]
         print(f'{device} is in {location} and has ip {ip}.')
+
+print("Please add a new router to the list")
+hostname = input("Please enter the hostname: ")
+ip = input("Please add the ip address: ")
+location = input("Please add the location: ")
+
+router = [hostname, ip, location]
+with open("csv_file.csv", "a") as data:
+    csv_writer = csv.writer(data)
+    csv_writer.writerow(router)
+    
