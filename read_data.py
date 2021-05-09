@@ -1,5 +1,4 @@
 
-'''
 #Assign to a variable
 readdata = open("README.txt", "r")
 
@@ -8,7 +7,7 @@ print(readdata.read())
 
 #if using open, need to use close
 readdata.close
-'''
+
 #Can use "with" and it will close the file for me
 with open("README.txt", "r") as data:
     print(data.read())

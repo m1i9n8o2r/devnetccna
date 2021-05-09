@@ -6,7 +6,7 @@ import calendar as cal
 import pysnmp
 help(pysnmp)
 
-'''
+
 #to show the list of methods
 print(dir(math))
 
@@ -21,4 +21,4 @@ print(help(cal.month(2021, 1, 2,1)))
 
 #To see where Python is looking for modules
 print(sys.path)
-'''
+'
