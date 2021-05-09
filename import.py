@@ -1,4 +1,5 @@
 import math
+import sys
 #Can use an alias for a module
 import calendar as cal
 
@@ -13,3 +14,6 @@ print(help(math.sqrt))
 
 #Using the short name of module calendar
 print(help(cal.month(2021, 1, 2,1)))
+
+#To see where Python is looking for modules
+print(sys.path)
