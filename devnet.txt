@@ -1,0 +1,543 @@
+#to remove resource group in powershell
+remove-AzureRMresourcegroup -name NCoffee
+
+#cloudshell direct
+shell.azure.com
+***************************************************************************************************************************************************************
+***************************************************************************************************************************************************************
+#BASH
+
+[minor@centos ~]$ man man
+
+[minor@ubuntu ~]$ sudo apt-get update --> to see what is upgradable
+
+[minor@ubuntu ~]$ sudo apt-get upgrade --> to actually update what is upgradable
+
+[minor@ubuntu ~]$ sudo apt-get remove [name of the app]
+
+[minor@centos Desktop]$ more results.txt
+
+[minor@centos Desktop]$ cat results.txt 
+
+[minor@centos Desktop]$ cat results.txt | more
+
+[minor@centos ~]$ pwd
+
+[minor@centos ~]$ cd / --> to root dir
+
+[minor@centos ~]$ cd ../.. --> to jump 2 directories
+
+[minor@centos /]$ cd /home/minor/ --> changes dir
+
+[minor@centos ~]$ cd .. --> 1 back
+
+[minor@centos home]$ ls --> does not show hidden
+
+[minor@centos home]$ ls -a --> shows all inc hidden
+
+[minor@centos home]$ ls /home/minor --> lists files in dir
+
+[minor@centos home]$ mkdir test
+
+[minor@centos home]$ sudo mkdir test
+
+[minor@centos home]$ mkdir /home/minor/test
+
+[minor@centos Desktop]$ ls
+
+[minor@centos Desktop]$ cp results.txt results_copy.txt 
+
+[minor@centos ~]$ cp /home/minor/Desktop/results.txt ~/results_copy.txt
+
+[minor@centos ~]$ cp -r test test.dol
+
+[minor@centos ~]$ mv results_copy.txt results.txt --> renames the file
+
+[minor@centos ~]$ rm -rf test
+
+[minor@centos ~]$ rm -rf test.dol
+
+[minor@centos ~]$ touch results_touch.txt
+
+[minor@centos ~]$ touch results_touch{1..4}.txt
+
+[minor@centos ~]$ touch results_touch{1..4}.txt
+
+[minor@centos ~]$ rm results_touch{1..4}.txt 
+
+[minor@centos ~]$ env --> displays environment variables
+
+[minor@centos ~]$ echo $PATH
+/home/minor/.local/bin:/home/minor/bin:/home/minor/.local/bin:/home/minor/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
+
+[minor@centos ~]$ export PATH=$PATH:/Home/minor/bin --> to change env variable
+[minor@centos ~]$ echo $PATH
+/home/minor/.local/bin:/home/minor/bin:/home/minor/.local/bin:/home/minor/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/Home/minor/bin
+
+[minor@centos ~]$ echo "export PATH=$PATH:/Home/minor/bin" >> .bashrc --> to make a change in env variable permanent
+[minor@centos ~]$ cat .bashrc
+# User specific aliases and functions
+export PATH=/home/minor/.local/bin:/home/minor/bin:/home/minor/.local/bin:/home/minor/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/Home/minor/bin:/Home/minor/bin
+
+[minor@centos Desktop]$ ls
+results_copy.txt  results.txt
+[minor@centos Desktop]$ cd $home --> to return to home
+[minor@centos ~]$ pwd
+/home/minor
+
+[minor@centos ~]$ ls -l | grep test.txt 
+-rw-rw-r--. 1 minor minor   8 May  8 20:58 test.txt
+[minor@centos ~]$ chmod 755 test.txt --> change priviledges user/group/other then R=4 / W=2 / X=1 --> Full access is 7, Read access is 4, RW access is 6 i.e: rwxr--r-x = 745
+[minor@centos ~]$ ls -l | grep test.txt 
+-rwxr-xr-x. 1 minor minor   8 May  8 20:58 test.txt
+
+***************************************************************************************************************************************************************
+***************************************************************************************************************************************************************
+#GIT
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git config --list --> To see current config
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git config --global user.name "m1i9n8o2r" --> to create global user to record commits
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git config --global user.email "m1i9n8o2r@gmail.com" 
+
+m1i9n@NIKOLA MINGW64 ~
+$ git clone https://github.com/CiscoDevNet/pyats-coding-101.git --> To clone a proyect
+
+m1i9n@NIKOLA MINGW64 ~
+$ git init newrepo --> to create a new repo                                                                             
+
+m1i9n@NIKOLA MINGW64 ~
+$ cd newrepo
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ touch newfile
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git status --> check file status
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git add newfile --> add file to git index (staging)
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ touch removeme.txt
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git add removeme.txt
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git mv newfile2 newfile1
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git commit -a -m "mi tercer commit de prueba"
+
+$ git remote -v --> to view current linked repo
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git remote add origin https://github.com/m1i9n8o2r/devnetccna --> to link a remote repo
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git remote rm origin --> to delete link to remote repo
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git pull origin master --> To sync local repo with what remote repo has
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git log --> shows date, author and hash (SHA1) of every commit
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+git log --oneline --> to check the id and a summaried view of commits
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git log -n 3 --> shows last 3 commits
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git log --oneline -n 3 --> can combine filters
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git branch newfeature --> creates a new branch
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git branch --> shows current branches
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git branch -d newfeature
+Deleted branch newfeature (was 97fbd86).
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git checkout newfeature
+Switched to branch 'newfeature'
+m1i9n@NIKOLA MINGW64 ~/newrepo (newfeature)
+
+To add a branch and merge changes:
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git checkout newfeature
+Switched to branch 'newfeature'
+m1i9n@NIKOLA MINGW64 ~/newrepo (newfeature)
+$ ls
+README.txt  minor_test.txt
+m1i9n@NIKOLA MINGW64 ~/newrepo (newfeature)
+$ touch toda.txt
+m1i9n@NIKOLA MINGW64 ~/newrepo (newfeature)
+$ ls
+README.txt  minor_test.txt  toda.txt
+m1i9n@NIKOLA MINGW64 ~/newrepo (newfeature)
+$ git add .
+m1i9n@NIKOLA MINGW64 ~/newrepo (newfeature)
+$ git commit -a -m "new file in feature"
+[newfeature 97ac8ea] new file in feature
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 toda.txt
+m1i9n@NIKOLA MINGW64 ~/newrepo (newfeature)
+$ git checkout master
+Switched to branch 'master'
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git merge newfeature
+Updating 4dfdf76..97ac8ea
+Fast-forward
+ toda.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 toda.txt
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ ls
+README.txt  minor_test.txt  toda.txt
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git branch -d newfeature
+Deleted branch newfeature (was 97ac8ea).
+
+
+*******
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git diff
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ vim README.txt
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ ls -l
+total 1
+-rw-r--r-- 1 m1i9n 197614 6 May  4 12:26 README.txt
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git diff --> before git add or git commit. To see a change not in stage yet.
+warning: LF will be replaced by CRLF in README.txt.
+The file will have its original line endings in your working directory
+diff --git a/README.txt b/README.txt
+index e69de29..989f51a 100644
+--- a/README.txt
++++ b/README.txt
+@@ -0,0 +1 @@
++test!
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git add README.txt
+warning: LF will be replaced by CRLF in README.txt.
+The file will have its original line endings in your working directory
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.txt
+
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git diff
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git diff --cached --> To see a change once it is staged
+diff --git a/README.txt b/README.txt
+index e69de29..989f51a 100644
+--- a/README.txt
++++ b/README.txt
+@@ -0,0 +1 @@
++test!
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git diff HEAD --> diff bet most recent commit and current working directory
+diff --git a/README.txt b/README.txt
+index e69de29..989f51a 100644
+--- a/README.txt
++++ b/README.txt
+@@ -0,0 +1 @@
++test!
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git diff newfeature README.txt --> From branch master to see diff bet files in diff branches
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git log --oneline
+cb7cbd3 (HEAD -> master, origin/master) .
+e42965f README.txt
+1311a58 README.txt
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git diff e42965f 1311a58 --> compare 2 specific commits
+diff --git a/README.txt b/README.txt
+index 9daeafb..816505b 100644
+--- a/README.txt
++++ b/README.txt
+@@ -1 +1,6 @@
+ test
++minor1
++minor2
++minor3
++minor4
++minor5
+diff --git a/toda.txt b/toda.txt
+deleted file mode 100644
+index 3813987..0000000
+--- a/toda.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-tomela!
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git checkout 6dee5b6 --> To go back to a particular commit, this will erase current files that were not present at the moment of that old commit. You can commit changes 
+here but it will be detached from HEAD and from BRANCH. Once you go back to master, commit will not show up in history
+m1i9n@NIKOLA MINGW64 ~/newrepo ((6dee5b6...))
+$ ls
+newfile  tomela.txt
+
+m1i9n@NIKOLA MINGW64 ~/newrepo ((6dee5b6...))
+$ git checkout master --> to go back to HEAD
+Previous HEAD position was 6dee5b6 guardando mis primeros 2 git files
+Switched to branch 'master'
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ ls
+README.txt
+
+To revert a quick change, like rollback 0 in juniper
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git commit -m "test" --amend
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git reset HEAD ~3 --> to make the HEAD to be the id of 3 commits ago
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git revert 6dee5b6 --> undo's the changes made on commit 6dee5b6 whithout lossing the history of the commit
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test2.txt
+
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git restore --staged test2.txt --> Revert from stage back to untracked
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+To ignore files from being staged:
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ cat .gitignore --> add file to .gitignore so that changes are not staged nor shown in git status
+test2.txt
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ ls
+README.txt  test.txt  test2.txt
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ vim test2.txt
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+m1i9n@NIKOLA MINGW64 ~/newrepo (master)
+$git rm test2.txt --cached --> will remove from repo but not from file system
+
+***************************************************************************************************************************************************************
+***************************************************************************************************************************************************************
+#Visual Studio Code
+Ctrl+shift+p --> to open the command palete
+preferences color theme 
+
+ctrl + , --> to open settings tab
+
+ctrl + b --> opens/close file explorer
+
+#PYTHON
+
+C:\Users\m1i9n>py -3 -m venv Scripts --> Create virtual environment
+C:\Users\m1i9n>cd C:\Users\m1i9n\PycharmProjects\hola_mundo\venv\Scripts
+C:\Users\m1i9n\PycharmProjects\hola_mundo\venv\Scripts>activate.bat
+(venv) C:\Users\m1i9n\PycharmProjects\hola_mundo\venv\Scripts>
+(venv) C:\Users\m1i9n\PycharmProjects\hola_mundo\venv\Scripts>deactivate --> to return to local python version
+C:\Users\m1i9n\PycharmProjects\hola_mundo\venv\Scripts>
+
+pip install paramiko
+pip install package>=1.0 --> install greater than version
+pip install package==1.1.1 --> install spec ver
+pip install requirements.txt --> to add to app so that it downloads all libs i need
+pip freeze requirements.txt --> snapshot of current libs in venv
+
+>>> bin(218) --> convert from decimal to bin
+'0b11011010'
+
+>>> type(int("10"))
+<class 'int'>
+
+>>> a = "Minor"
+>>> a[0]
+'M'
+
+>>> a[0:2]
+'Mi'
+
+>>> a[:2]
+'Mi'
+
+>>> a[2:]
+'nor'
+
+>>> a[-2:]
+'or'
+
+>>> a[:-2]
+'Min'
+
+>>> "Minor" + "Rocks"
+'MinorRocks'
+
+>>> "MinorRocks " * 3
+'MinorRocks MinorRocks MinorRocks '
+
+>>> minor.capitalize()
+'Minor'
+
+>>> a.center(8)
+' Minor  '
+
+>>> a.find("i", 0, 4)
+1
+
+>>> a.endswith("r")
+True
+
+>>> b.rstrip("i")
+'Minor '
+>>> b.rstrip()
+'Minor'
+
+>>> a = "Minor"
+>>> a.replace("i", "a")
+'Manor'
+
+>>> a.lower()
+'minor'
+
+>>> a.upper()
+'MINOR'
+
+>>> emptylist = list()
+>>> print(emptylist)
+[]
+>>> emptylist2 = []
+>>> print(emptylist2)
+[]
+
+>>> list1 = ["Minor"]
+>>> list1[0]
+'Minor'
+>>> list1[0] = "Jessica"
+>>> print(list1)
+['Jessica']
+>>>
+
+>>> list3 = list1 + list2
+>>> print(list3)
+['Jessica', 'Minor']
+
+list.append(element)
+list.clear()
+list.copy()
+list.count((element))
+list.extend()
+list.index()
+list.insert(index, element)
+list.pop(index)
+list.remove()
+list.reverse()
+list.sort()
+
+>>> tuple = ("Jessica")
+>>> type(tuple)
+<class 'str'>
+>>> tuple = ("Jessica",)
+>>> print(tuple)
+('Jessica',)
+>>> type(tuple)
+<class 'tuple'>
+
+>>> (a, b, c) = (12, 13, 16)
+>>> c
+16
+
+>>> set1 = {2, 4, 6, 8, 10}
+>>> set2 = {1, 3, 5, 7, 9}
+>>> set1 | set2
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+
+>>> set1 = {2, 4, 6, 8, 10}
+>>> set2 = {1, 3, 5, 7, 9}
+>>> set1 | set2
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+>>> set1 & set2
+set()
+>>> set1 = {2, 4, 5, 6, 8, 10}
+>>> set1 & set2
+{5} --> intersection of 2 sets
+
+>>> print("\\:Minor")
+\:Minor
+>>> print("\\Minor")
+\Minor
+>>> print("\\:Minor")
+\:Minor
+>>> print("\bMinor")
+Minor
+>>> print("\b:Minor")
+:Minor
+>>> print("\'Minor")
+'Minor
+>>> print("\t:Minor")
+        :Minor
+>>> print("\r:Minor")
+:Minor
+
+>>> name1 = "Minor"
+>>> name2 = "Jessica"
+>>> print(f"{name1} says hi to {name2}") --> F-string function!!
+Minor says hi to Jessica
+
+help(print) --> Give descr of what a function does
+
+
+
+
