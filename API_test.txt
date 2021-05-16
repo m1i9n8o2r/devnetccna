@@ -1,1 +1,3 @@
-https://api.agify.io?name=Jessica
+
+#ctrl + alt + r to use rest client to do a get of the API
+https://api.agify.io?name=Mario
